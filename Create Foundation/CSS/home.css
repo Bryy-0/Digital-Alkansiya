@@ -1,0 +1,397 @@
+
+/* Add to the bottom of style.css */
+.home-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+/* Animated Gradient Background */
+.dashboard-body {
+    background: linear-gradient(-45deg, #f9f0eb, #fce4ec, #e97451, #ffab91);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    width: 425px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    text-align: center;
+}
+
+.welcome-text {
+    color: #333;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.brand-subtext {
+    color: var(--coral);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+/* Stats Styling */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--coral);
+}
+
+/* Progress Bar */
+.progress-section {
+    margin-bottom: 30px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.progress-bar-bg {
+    background: rgba(0, 0, 0, 0.05);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background: var(--coral);
+    width: 15%; /* Change this to simulate progress */
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-btn.secondary {
+    background: white;
+    color: var(--coral);
+    border: 1px solid var(--coral);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(233, 116, 81, 0.3);
+}
+
+.logout-link {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.logout-link:hover {
+    color: var(--coral);
+}
+
+/* Hamburger Icon Styling */
+.menu-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.hamburger {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #2C2C2C; /* Match your dark border color */
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Sidebar Styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden by default */
+    width: 280px;
+    height: 100%;
+    background-color: #FDF7F5; /* Match your card background */
+    border-right: 3px solid #2C2C2C;
+    z-index: 1000;
+    transition: 0.4s ease-in-out;
+    padding: 60px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.side-menu.active {
+    left: 0; /* Slides in */
+}
+
+/* Menu List Items */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    flex-grow: 1;
+}
+
+.menu-links li {
+    margin-bottom: 20px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #1F2E30;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.menu-links a:hover {
+    color: #ED7859;
+}
+
+/* Verify Now Button Styling */
+.verify-btn {
+    display: block;
+    background-color: #ED7859; /* Coral color */
+    color: white !important;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #2C2C2C;
+    margin-top: 10px;
+}
+
+.verify-btn:hover {
+    background-color: #d66340;
+}
+
+/* Hamburger Animation (Turn into an X) */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+/* Sidebar Logout Button - Full Width */
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2F2F2F; /* Dark Charcoal */
+    color: #FFFFFF; /* White text */
+    border: 2px solid #2C2C2C; /* Dark border */
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    margin-top: auto; /* Pushes to bottom of flex container */
+}
+
+.logout-btn:hover {
+    background-color: #ED7859; /* Changes to Coral on hover */
+    border-color: #2F2F2F;
+    transform: translateY(-2px);
+}
+
+/* If you have a logout button on the main dashboard card */
+.logout-btn-simple {
+    background: none;
+    border: 2px solid #ED7859;
+    color: #ED7859;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.logout-btn-simple:hover {
+    background-color: #ED7859;
+    color: white;
+}
+/* Update your existing .dashboard-body to allow vertical stacking */
+.dashboard-body {
+    background: linear-gradient(-45deg, #f9f0eb, #fce4ec, #e97451, #ffab91);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    flex-direction: column; /* Changed from default row to column */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed to min-height to account for scrolling */
+    margin: 0;
+    padding: 40px 20px; /* Added padding for mobile breathing room */
+}
+
+/* Styling for the new description */
+.campaign-info {
+    max-width: 650px;
+    margin-top: 50px;
+    text-align: center;
+    color: #2C2C2C;
+    background: rgba(255, 255, 255, 0.3); /* Subtle glass effect */
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    line-height: 1.6;
+}
+
+.campaign-info h3 {
+    margin-top: 0;
+    color: #e97451; /* Match your coral theme */
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campaign-info p {
+    font-size: 1rem;
+    margin: 0;
+}
+/* Jar Visualization Styles */
+.jar-lid {
+    width: 120px;
+    height: 30px;
+    background: #FDF7F5;
+    border: 3px solid #000;
+    border-radius: 8px 8px 2px 2px;
+    margin: 0 auto -5px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.jar-container {
+    width: 200px;
+    height: 280px;
+    background: #FDF7F5;
+    border: 4px solid #000;
+    border-radius: 30px 30px 50px 50px;
+    margin: 0 auto 20px auto;
+    position: relative;
+    overflow: hidden; /* Clips the liquid to the jar shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jar-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* Dynamic Height */
+    background-color: #76BCAD; /* Teal liquid */
+    transition: height 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.jar-content {
+    position: relative;
+    z-index: 3;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #000;
+}
+
+/* Milestone Badges */
+.badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.badge-dot {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #E0E0E0;
+    /* Added transition for a "lighting up" effect */
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.badge-dot.active {
+    background: #76BCAD; /* The teal color from your jar */
+    border-color: #000;
+    /* Subtle pop effect when it lights up */
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(118, 188, 173, 0.5);
+}
+
+/* Override Donate Button to match the Orange theme */
+.action-btn {
+    background: #ED7859 !important;
+    color: white !important;
+    border: 2px solid #000 !important;
+    padding: 15px !important;
+}

@@ -1,0 +1,124 @@
+/* leaderboard.css */
+
+:root {
+    --leaderboard-cream: #FDF7F5; /* Table background */
+    --leaderboard-green: #D4E2C7; /* Footer color */
+}
+
+/* 1. Page & Layout Reset */
+.dashboard-body {
+    /* (Animation background is inherited from home.css) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+/* 2. Leaderboard Container (Wrapper) */
+.leaderboard-wrapper {
+    width: 650px; /* Adjust based on preference */
+    background: #FFF; /* Pure white container like image_4.png */
+    padding: 1.25rem 0.525rem 0.625rem 0.525rem; /* Specific padding from reference */
+    border-radius: 10px; /* Nearly flat corners */
+    border: 3.5px solid #000; /* Bold black border */
+    position: relative; /* Crucial for floating avatars */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 3. Typography */
+.leaderboard-header {
+    font-size: 2.8rem;
+    color: #ED7859; /* Brand orange */
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 4. Table Core Styling */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse; /* Essential for tight borders */
+    border: 3px solid #000; /* Outer table border */
+    table-layout: fixed; /* Ensures column widths remain fixed */
+}
+
+/* Column Widths (Simulated from reference image) */
+.leaderboard-table th:nth-child(1),
+.leaderboard-table td:nth-child(1) {
+    width: 30%; /* Ranking column */
+    border-right: 3px solid #000;
+}
+.leaderboard-table th:nth-child(2),
+.leaderboard-table td:nth-child(2) {
+    width: 70%; /* Name column */
+}
+
+/* 5. Header Styling */
+.header-main {
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: #ED7859; /* Coral/Orange Header */
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+}
+
+.header-sub {
+    font-size: 0.75rem;
+    padding: 0.8rem;
+    color: #FFF;
+    background-color: #ED7859; /* Inherited header color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #000;
+}
+
+/* 6. Body (Rows 1-10) Styling */
+.leaderboard-table tbody td {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    padding: 1rem;
+    background-color: var(--leaderboard-cream); /* Cream fill */
+    border-bottom: 2px solid #000; /* Borders between rows */
+}
+
+/* Special Case: Bold ranking number column */
+.leaderboard-table tbody td:nth-child(1) {
+    font-size: 1.4rem;
+}
+
+/* 7. Footer (Green) Row Styling */
+.footer-row {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem;
+    color: #000;
+    text-transform: uppercase;
+    background-color: var(--leaderboard-green); /* The specific green fill */
+    border-top: 3px solid #000;
+}
+
+/* Special Case: Left-aligned green name in footer */
+.leaderboard-table tfoot td:nth-child(2) {
+    text-align: left;
+    text-transform: none; /* Keeps name lowercase/capitalized normally */
+}
+
+/* Position 1: Top-Right of Table */
+.floating-avatar.top {
+    top: 55px; /* Adjust until it hits the specific location from image_4.png */
+    right: 80px;
+}
+
+/* Position 2: Middle-Left of Table */
+.floating-avatar.middle {
+    top: 180px; /* Adjust to float over the 'R' in Creator, row ~4 */
+    left: 15px;
+}
